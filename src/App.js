@@ -7,6 +7,7 @@ import Stocks from './pages/Stocks';
 import WorldBooks from './pages/WorldBooks';
 import IndividualBinding from './pages/IndividualBinding';
 import Contacts from './pages/Contacts';
+import Error from "./pages/Error";
 
 function App() {
   return (
@@ -20,18 +21,7 @@ function App() {
         <Route path='WorldBooks' element={<WorldBooks />} />
         <Route path='IndividualBinding' element={<IndividualBinding />} />
         <Route path='contacts' element={<Contacts />} />
-
-
-
-        
-        <Route
-          path="*"
-          element={
-            <main style={{ padding: "1rem" }}>
-              <p>There's nothing here!</p>
-            </main>
-          }
-        />
+        <Route path="*" element={<Error />}/>
       </Routes>
     </>
   );

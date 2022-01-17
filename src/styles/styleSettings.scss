@@ -27,3 +27,10 @@ p {
     width: 100%;
     margin: 0 auto;
 }
+
+.error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+}

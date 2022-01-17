@@ -1,0 +1,16 @@
+@media screen and (min-width: 992px) {
+    .navbar {
+        height: 105px;
+    }
+
+    .navbar-collapse {
+        display: flex;
+        justify-content: right;
+    }
+    .navbar-brand {
+        margin-bottom: 10px;
+    }
+    .nav-item {
+        padding-right: 10px;
+    }
+}
