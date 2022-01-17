@@ -18,22 +18,22 @@ function Navbar() {
                             <div className="collapse navbar-collapse" id="navbarNav">
                                 <ul className="navbar-nav">
                                     <li className="nav-item">
-                                        <NavLink className="nav-link" to="about">О нас</NavLink>
+                                        <NavLink  className={({ isActive }) => isActive ? "nav-link nav-active" : "nav-link"} to="about">О нас</NavLink>
                                     </li>
                                     <li className="nav-item">
-                                        <NavLink className="nav-link" to="PaymentAndDelivery">Оплата и доставка</NavLink>
+                                        <NavLink className={({ isActive }) => isActive ? "nav-link nav-active" : "nav-link"} to="PaymentAndDelivery">Оплата и доставка</NavLink>
                                     </li>
                                     <li className="nav-item">
-                                        <NavLink className="nav-link" to="stocks">Акции</NavLink>
+                                        <NavLink className={({ isActive }) => isActive ? "nav-link nav-active" : "nav-link"} to="stocks">Акции</NavLink>
                                     </li>
                                     <li className="nav-item">
-                                        <NavLink className="nav-link" to="WorldBooks">Мир Книг</NavLink>
+                                        <NavLink className={({ isActive }) => isActive ? "nav-link nav-active" : "nav-link"} to="WorldBooks">Мир Книг</NavLink>
                                     </li>
                                     <li className="nav-item">
-                                        <NavLink className="nav-link" to="IndividualBinding">Индивидуальный переплет</NavLink>
+                                        <NavLink className={({ isActive }) => isActive ? "nav-link nav-active" : "nav-link"} to="IndividualBinding">Индивидуальный переплет</NavLink>
                                     </li>
                                     <li className="nav-item">
-                                        <NavLink className="nav-link" to="contacts">Контакты</NavLink>
+                                        <NavLink className={({ isActive }) => isActive ? "nav-link nav-active" : "nav-link"} to="contacts">Контакты</NavLink>
                                     </li>
                                     <li className="nav-item">
                                         <Link className="nav-link" to="/"><i className="fas fa-phone-alt"></i></Link> 
