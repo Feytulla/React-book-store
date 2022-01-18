@@ -1,0 +1,38 @@
+.search {
+    display: flex;
+    width: 100%;
+    height: 40px;
+    background: #fff;
+    margin: 30px 0 15px 0;
+}
+
+.search__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 5px $orange-color solid;
+    color: $orange-color;
+    font-size: 18px;
+    padding: 0 10px 0 19px;
+}
+
+.search__row {
+    width: 100%;
+    height: 40px;
+}
+
+.search__input {
+    all: unset;
+    width: 100%;
+    height: 40px;
+    border: none;
+}
+.search__input[placeholder] {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    color: #9e9e9e;
+    padding: 0;
+    margin: 0;
+}

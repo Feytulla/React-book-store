@@ -145,6 +145,17 @@ function Home() {
                                     <i class="fas fa-chevron-right"></i>
                                 </button>
                             </div>
+                            <form action="">
+                                <div className="search">
+                                    <div className="search__icon">
+                                        <i class="fas fa-search"></i>
+                                    </div>
+                                    <div className="search__row">
+                                        <input type="text" className="search__input" placeholder="Поиск по товарам" />
+                                    </div>
+
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
