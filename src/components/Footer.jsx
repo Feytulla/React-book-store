@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 function Footer() {
     return (
@@ -11,7 +11,7 @@ function Footer() {
                         </div>
                         <div className="col-12 col-md-3 mt-4 mt-md-0 footer__col">
                             <h3 className="footer__title">Наш магазин</h3>
-                            <ul className='mt-4'>
+                            <ul className='footer__items mt-4'>
                                 <li className='footer__item'><Link to='about'>О нас</Link></li>
                                 <li className='footer__item'><Link to='PaymentAndDelivery'>Оплата и доставка</Link></li>
                                 <li className='footer__item'><Link to='*'>Политика безопасности</Link></li>
@@ -21,7 +21,7 @@ function Footer() {
                         </div>
                         <div className="col-12 col-md-3 mt-4 mt-md-0 footer__col">
                             <h3 className="footer__title">Контакты</h3>
-                            <ul className='mt-4'>
+                            <ul className='footer__items mt-4'>
                                 <li className='footer__item d-flex align-items-center'><i class="fas fa-map-marker-alt"></i><div className='footer__text'>Украина, Одесса Космонавта Комарова, 10</div></li>
                                 <li className='footer__item d-flex align-items-center'>
                                     <i className="fas fa-phone-alt"></i>
@@ -30,7 +30,7 @@ function Footer() {
                                         <div>+38 098 950-13-30</div>
                                     </div>
                                 </li>
-                                <li  className='footer__item d-flex align-items-center'><i class="fas fa-envelope"></i><span className='footer__text'>kniginya.com@gmail.com</span></li>
+                                <li className='footer__item d-flex align-items-center'><i class="fas fa-envelope"></i><span className='footer__text'>kniginya.com@gmail.com</span></li>
                             </ul>
                         </div>
                         <div className="col-12 col-md-3 footer__col">
@@ -43,9 +43,9 @@ function Footer() {
                         </div>
                     </div>
                     <hr />
-                    <div className='footer__copyright text-center'>
-                        <p>Уникальные и коллекционные книги | Украинская книга | Художественная литература, поэзия | Собрания сочинений и библиотеки | Искусство и культура | История и философия, психология Энциклопедии и справочники | Религия | Фотоальбомы | Кулинария, спиртные напитки | Ежедневники и др. | Подержанные книги | Мебель для кабинета и библиотеки, предметы интерьера</p>
-                        <p> Сайт сделан в оброзовательских целях и не имеет общего с оригинальным сайтом </p>
+                    <div className='text-center'>
+                        <p className='footer__copyright'>Уникальные и коллекционные книги | Украинская книга | Художественная литература, поэзия | Собрания сочинений и библиотеки | Искусство и культура | История и философия, психология Энциклопедии и справочники | Религия | Фотоальбомы | Кулинария, спиртные напитки | Ежедневники и др. | Подержанные книги | Мебель для кабинета и библиотеки, предметы интерьера</p>
+                        <p className='footer__copyright'> Сайт сделан в оброзовательских целях и не имеет общего с оригинальным сайтом </p>
                     </div>
                 </div>
             </footer>

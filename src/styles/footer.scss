@@ -8,11 +8,20 @@
     font-style: normal;
     font-weight: 600;
     font-size: 18px;
-    // text-align: center;
+}
+.footer__items {
+    list-style-type: none;
+    padding: 0;
 }
 
 .footer__item {
-    padding-bottom: 16px;
+    padding: 0 0 16px 0;
+    color: $white-color;
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 24px;
 }
 
 .footer__text {
