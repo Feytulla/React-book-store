@@ -1,5 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Partners from "../components/home/Partners";
+import About from "../components/home/About";
+import Footer from "../components/Footer";
 
 function Home() {
     return (
@@ -50,7 +53,7 @@ function Home() {
                         </div>
                         <div className="col-6 col-sm-9">
                             <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
-                                <div class="carousel-indicators">
+                                <div className="carousel-indicators">
                                     <button type="button" className="carousel__ind active" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" aria-current="true" aria-label="Slide 1"></button>
                                     <button type="button" className="carousel__ind" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                                     <button type="button" className="carousel__ind" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
@@ -83,7 +86,7 @@ function Home() {
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="carousel-item">
+                                    <div className="carousel-item">
                                         <div className="d-flex slider__container">
                                             <div className="col-6 col-sm-6">
                                                 <div className="slider__head">
@@ -110,7 +113,7 @@ function Home() {
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="carousel-item">
+                                    <div className="carousel-item">
                                         <div className="d-flex slider__container">
                                             <div className="col-6 col-sm-6">
                                                 <div className="slider__head">
@@ -138,17 +141,17 @@ function Home() {
                                         </div>
                                     </div>
                                 </div>
-                                <button class="carousel-control-prevv" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                                    <i class="fas fa-chevron-left"></i>
+                                <button className="carousel-control-prevv" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                    <i className="fas fa-chevron-left"></i>
                                 </button>
-                                <button class="carousel-control-nextt" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                                    <i class="fas fa-chevron-right"></i>
+                                <button className="carousel-control-nextt" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                    <i className="fas fa-chevron-right"></i>
                                 </button>
                             </div>
                             <form action="">
                                 <div className="search">
                                     <div className="search__icon">
-                                        <i class="fas fa-search"></i>
+                                        <i className="fas fa-search"></i>
                                     </div>
                                     <div className="search__row">
                                         <input type="text" className="search__input" placeholder="Поиск по товарам" />
@@ -158,6 +161,8 @@ function Home() {
                             </form>
                         </div>
                     </div>
+                    <Partners />
+                    <About />
                 </div>
             </main>
         </>
