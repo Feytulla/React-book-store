@@ -63,11 +63,11 @@ function Comments() {
                     </div>
                     <div class="mb-3 form-comment__emai">
                         <label for="exampleInputEmail1" class="form-label">Ваш email:</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введите Ваше email" value={email} onChange={e => setEmail(e.target.value)} />
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введите Ваш email" value={email} onChange={e => setEmail(e.target.value)} />
                     </div>
                     <div class="mb-3 form-comment__comment">
                         <label class="form-label">Ваш комментарий:</label>
-                        <textarea name="comment" id="" placeholder="Введите Ваше комментарий" value={comment} onChange={e => setComment(e.target.value)}></textarea>
+                        <textarea name="comment" id="" placeholder="Введите Ваш комментарий" value={comment} onChange={e => setComment(e.target.value)}></textarea>
                     </div>
                     <button type="submit" class="btn form-comment__btn">Отправить</button>
                 </form>
