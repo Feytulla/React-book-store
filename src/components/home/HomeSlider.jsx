@@ -1,3 +1,5 @@
+import BookQualities from '../BookQualities'
+
 function HomeSlider() {
     return (
         <>
@@ -12,23 +14,10 @@ function HomeSlider() {
                         <div className="d-flex slider__container">
                             <div className="col-6 col-sm-6">
                                 <div className="slider__head">
-                                    <h2 className="slider__title title">Индивидуальный переплёт</h2>
+                                    <h2 className="title">Индивидуальный переплёт</h2>
                                     <p className="slider__subtitle">книг и библиотек</p>
                                 </div>
-                                <div className="slider__body row">
-                                    <div className="slider__item col-3">
-                                        <img src={require('../../images/icon/icon-heart.png')} />
-                                        <p className="slider__text">Ручная работа</p>
-                                    </div>
-                                    <div className="slider__item col-3">
-                                        <img src={require('../../images/icon/icon-quality.png')} />
-                                        <p className="slider__text">Лучшие специалисты</p>
-                                    </div>
-                                    <div className="slider__item col-3">
-                                        <img src={require('../../images/icon/icon-membrane.png')} />
-                                        <p className="slider__text">Применение качественных материалов</p>
-                                    </div>
-                                </div>
+                                <BookQualities />
                             </div>
                             <div className="col-6 col-sm-6">
                                 <img src={require('../../images/slider/slider_1.jpg')} />
@@ -41,20 +30,7 @@ function HomeSlider() {
                                 <div className="slider__head">
                                     <h2 className="slider__title title">Подарок для людей у которых всё есть</h2>
                                 </div>
-                                <div className="slider__body">
-                                    <div className="slider__item col-3">
-                                        <img src={require('../../images/icon/icon-heart.png')} />
-                                        <p className="slider__text">Ручная работа</p>
-                                    </div>
-                                    <div className="slider__item col-3">
-                                        <img src={require('../../images/icon/icon-quality.png')} />
-                                        <p className="slider__text">Лучшие специалисты</p>
-                                    </div>
-                                    <div className="slider__item col-3">
-                                        <img src={require('../../images/icon/icon-membrane.png')} />
-                                        <p className="slider__text">Применение качественных материалов</p>
-                                    </div>
-                                </div>
+                                <BookQualities />
                             </div>
                             <div className="col-6 col-sm-6">
                                 <img src={require('../../images/slider/slider_2.jpg')} />
@@ -68,20 +44,7 @@ function HomeSlider() {
                                     <h2 className="slider__title title">Книги – это инвестирование в себя</h2>
                                     <p className="slider__subtitle">коллекционные книги – это капиталовложение</p>
                                 </div>
-                                <div className="slider__body">
-                                    <div className="slider__item col-3">
-                                        <img src={require('../../images/icon/icon-heart.png')} />
-                                        <p className="slider__text">Ручная работа</p>
-                                    </div>
-                                    <div className="slider__item col-3">
-                                        <img src={require('../../images/icon/icon-quality.png')} />
-                                        <p className="slider__text">Лучшие специалисты</p>
-                                    </div>
-                                    <div className="slider__item col-3">
-                                        <img src={require('../../images/icon/icon-membrane.png')} />
-                                        <p className="slider__text">Применение качественных материалов</p>
-                                    </div>
-                                </div>
+                                <BookQualities />
                             </div>
                             <div className="col-6 col-sm-6">
                                 <img src={require('../../images/slider/slider_3.jpg')} />

@@ -9,7 +9,9 @@ body {
     overflow-x: hidden;
 }
 
-p,ul,ol {
+p,
+ul,
+ol {
     font-family: "Open Sans";
     font-style: normal;
     font-weight: 400;
@@ -107,4 +109,50 @@ hr {
     font-weight: bold;
     font-size: 18px;
     line-height: 180%;
+}
+
+.form {
+    max-width: 360px;
+}
+.form input,
+.form__comment textarea {
+    border: 2px solid $orange-color;
+    box-sizing: border-box;
+    box-shadow: inset 0px 4px 15px #fafafc;
+    border-radius: 8px;
+}
+
+.form__comment textarea {
+    max-width: 360px;
+    width: 100%;
+    height: 80px;
+    padding-left: 10px;
+}
+
+.form__btn {
+    box-sizing: border-box;
+    border-radius: 8px;
+    background: $orange-color;
+    color: #fff;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 130%;
+    text-align: center;
+}
+
+.book-qualities {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    background: $white-color;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.book-qualities__text {
+    line-height: 130%;
+    padding-top: 15px;
 }

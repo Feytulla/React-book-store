@@ -6,11 +6,8 @@
 .contact__item {
     padding: 0 0 20px 0;
 }
-.contact__item .fa-clock,
-.fa-map-marker-alt,
-.fa-phone-alt,
-.fa-envelope {
-    color: $orange-color;
+.icon-color {
+    color: $orange-color !important;
 }
 
 .contact__text {
@@ -21,8 +18,4 @@
     line-height: 170%;
     color: $black-color;
     padding-left: 10px;
-}
-
-.div {
-    // outline: 1px solid red;
 }
