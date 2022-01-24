@@ -41,7 +41,7 @@ function Contacts() {
                             <h4 className="h4">Написать нам</h4>
                             <form className="form">
                                 <div class="mb-3 form__name">
-                                    <label for="exampleInputPassword1" class="form-label">Ваше имя:</label>
+                                    <label class="form-label">Ваше имя:</label>
                                     <input type="text" class="form-control" placeholder="Введите Ваше имя" />
                                 </div>
                                 <div class="mb-3 form__email">

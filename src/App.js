@@ -10,6 +10,7 @@ import IndividualBinding from './pages/IndividualBinding';
 import Contacts from './pages/Contacts';
 import Error from "./pages/Error";
 import Footer from "./components/Footer";
+import Order from "./pages/Order";
 
 const Wrapper = ({ children }) => {
   const location = useLocation();
@@ -25,7 +26,6 @@ function App() {
       <Navbar />
       <Wrapper>
         <Routes>
-          {/* <ScrollToTop /> */}
           <Route path='/' element={<Home />} />
           <Route path='about' element={<About />} />
           <Route path='PaymentAndDelivery' element={<PaymentAndDelivery />} />
@@ -33,6 +33,7 @@ function App() {
           <Route path='WorldBooks' element={<WorldBooks />} />
           <Route path='IndividualBinding' element={<IndividualBinding />} />
           <Route path='contacts' element={<Contacts />} />
+          <Route path='order' element={<Order />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </Wrapper>

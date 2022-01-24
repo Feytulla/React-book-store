@@ -114,13 +114,13 @@ hr {
 .form {
     max-width: 360px;
 }
-.form input,
-.form__comment textarea {
-    border: 2px solid $orange-color;
-    box-sizing: border-box;
-    box-shadow: inset 0px 4px 15px #fafafc;
-    border-radius: 8px;
-}
+// .form input,
+// .form__comment textarea {
+//     border: 2px solid $orange-color;
+//     box-sizing: border-box;
+//     box-shadow: inset 0px 4px 15px #fafafc;
+//     border-radius: 8px;
+// }
 
 .form__comment textarea {
     max-width: 360px;
@@ -129,18 +129,18 @@ hr {
     padding-left: 10px;
 }
 
-.form__btn {
-    box-sizing: border-box;
-    border-radius: 8px;
-    background: $orange-color;
-    color: #fff;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 12px;
-    line-height: 130%;
-    text-align: center;
-}
+// .form__btn {
+//     box-sizing: border-box;
+//     border-radius: 8px;
+//     background: $orange-color;
+//     color: #fff;
+//     font-family: Montserrat;
+//     font-style: normal;
+//     font-weight: 600;
+//     font-size: 12px;
+//     line-height: 130%;
+//     text-align: center;
+// }
 
 .book-qualities {
     display: flex;
@@ -155,4 +155,22 @@ hr {
 .book-qualities__text {
     line-height: 130%;
     padding-top: 15px;
+}
+
+input,textarea {
+    border: 2px solid $orange-color !important;
+    border-radius: 8px;
+}
+
+.submit {
+    box-sizing: border-box;
+    border-radius: 8px;
+    background: $orange-color;
+    color: #fff;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 130%;
+    text-align: center;
 }

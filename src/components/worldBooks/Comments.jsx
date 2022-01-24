@@ -58,7 +58,7 @@ function Comments() {
                 <h5 className="h5">Оставить комментарий</h5>
                 <form className="form" onSubmit={handleSubmit}>
                     <div class="mb-3 form__name">
-                        <label for="exampleInputPassword1" class="form-label">Ваше имя:</label>
+                        <label class="form-label">Ваше имя:</label>
                         <input type="text" class="form-control" placeholder="Введите Ваше имя" value={name} onChange={e => setName(e.target.value)} />
                     </div>
                     <div class="mb-3 form__email">
