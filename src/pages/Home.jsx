@@ -4,6 +4,7 @@ import About from "../components/home/About";
 import Catalog from "../components/home/Catalog";
 import HomeSlider from "../components/home/HomeSlider";
 import Search from "../components/Search";
+import Books from "../components/home/Books";
 
 function Home() {
     return (
@@ -17,6 +18,7 @@ function Home() {
                         <div className="col-6 col-sm-9">
                             <HomeSlider />
                             <Search />
+                            <Books />
                         </div>
                     </div>
                     <Partners />

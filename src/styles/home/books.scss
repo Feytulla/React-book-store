@@ -1,0 +1,43 @@
+.book {
+    display: block;
+    width: 190px;
+    height: auto;
+    background: #fff;
+    border-radius: 8px;
+}
+
+.book__image {
+}
+
+.book__image img {
+    width: 100%;
+}
+
+.book__info {
+    padding: 10px 15px;
+}
+
+.book__title {
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 130%;
+    color: $black-color;
+}
+
+.book__subtitle {
+    font-family: Open Sans;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 140%;
+    color: $black-color;
+    margin: 7px 0;
+}
+
+.book__price {
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 110%;
+    color: $black-color;
+}
