@@ -1,10 +1,12 @@
-import Breadcrumb from '../components/Breadcrumb'
+import Breadcrumb from '../components/Breadcrumb';
+import DoneOrder from '../components/DoneOrder';
 
 function Order() {
     return (
         <>
             <div className="containers">
                 <Breadcrumb currentPage={'Оформление заказа'} />
+                <DoneOrder />
                 <h1 className="title mb-4">Оформление заказа</h1>
                 <div className="content-container">
                     <h5 className='h5'>Авторизация (если вы уже зарегистрированы на сайте)</h5>
@@ -92,6 +94,7 @@ function Order() {
                             </div>
                         </div>
                     </div>
+                    <h5 className="h5 mt-4 mb-4">Товары в корзине</h5>
                 </form>
             </div>
         </>
