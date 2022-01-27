@@ -39,7 +39,7 @@ function Navbar() {
                                         <Link className="nav-link" to="/"><i className="fas fa-phone-alt"></i></Link> 
                                     </li>
                                     <li className="nav-item">
-                                        <Link className="nav-link" to="/"><i className="fas fa-shopping-bag"></i></Link> 
+                                        <Link className="nav-link" to="order"><i className="fas fa-shopping-bag"></i></Link> 
                                     </li>
                                 </ul>
                             </div>

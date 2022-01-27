@@ -1,4 +1,5 @@
 @import 'styles/styleSettings.scss';
+@import './styles/Loading.scss';
 @import 'styles/navbar.scss';
 @import 'styles/adaptive/size-992.scss';
 @import 'styles/footer.scss';
@@ -8,3 +9,5 @@
 @import './styles/contacts.scss';
 @import './styles/order.scss';
 @import './styles/doneOrder.scss';
+@import './styles/book/book.scss';
+@import './styles/book/QuickOrder.scss';

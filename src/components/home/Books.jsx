@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { apibooks } from '../../store/newBooks';
+import Loading from '../Loading';
 
 function Books() {
     const dispatch = useDispatch();
@@ -15,13 +16,13 @@ function Books() {
     return (
         <>
             <div className="row">
-                {status === 'loading' && <h2>Loading...</h2>}
+                {status === 'loading' && <Loading />}
                 {error && <h2>An error occured: {error}</h2>}
                 {
                     books && books.map((book, index) => {
                         return (
                             <div className="col-sm-6 col-md-3 mb-3" key={index}>
-                                <Link to='*'>
+                                <Link to={`/book/${book.isbn13}`}>
                                     <div className="book">
                                         <div className="book__image">
                                             <img src={book.image} alt="book" />

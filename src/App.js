@@ -11,6 +11,7 @@ import Contacts from './pages/Contacts';
 import Error from "./pages/Error";
 import Footer from "./components/Footer";
 import Order from "./pages/Order";
+import Book from "./pages/Book";
 
 const Wrapper = ({ children }) => {
   const location = useLocation();
@@ -27,6 +28,9 @@ function App() {
       <Wrapper>
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='book' element={<Book />}>
+            <Route path=':bookId' element={<Book />} />
+          </Route>
           <Route path='about' element={<About />} />
           <Route path='PaymentAndDelivery' element={<PaymentAndDelivery />} />
           <Route path='stocks' element={<Stocks />} />

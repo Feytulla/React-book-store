@@ -1,0 +1,28 @@
+.quick-block {
+    position: absolute;
+    width: 431px;
+    height: 330px;
+}
+
+.quick-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.quick-form__name {
+}
+
+.quick-form__phone {
+}
+
+.quick-form__btn {
+    width: 100%;
+    height: 38px;
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 130%;
+    background: $orange-color !important;
+    border-radius: 8px;
+    color: #fff;
+}

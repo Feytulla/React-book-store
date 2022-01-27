@@ -175,7 +175,7 @@ input,textarea {
     text-align: center;
 }
 
-form input[type=text],.reg-form input[type=email],.reg-form input[type=number],textarea::placeholder {
+form input[type=text],input[type=email],input[type=number],input[type=password],textarea::placeholder {
     font-family: "Open Sans";
     font-style: normal;
     font-weight: normal;
