@@ -26,14 +26,19 @@ export const bookCart = createSlice({
     },
     reducers: {
         addBook: (state, action) => {
+            const book = state.book.find(book => book.id === action.payload.id);
+            console.log(book)
             if (state.book.length === 0) {
                 state.book.push(action.payload);
+            } else if (book) {
+                state.book.filter((book, index) => {
+                    if (book.id === action.payload.id) {
+                        state.book[index].count = action.payload.count;
+                    }
+                });
+            } else {
+                state.book.push(action.payload);
             }
-            const lot = state.book.find((book, index) => {
-                if (book.id === action.payload.id) {
-                    state.book[index].count = action.payload.count;
-                }
-            });
         }
     },
     // extraReducers: {

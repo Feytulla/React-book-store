@@ -19,6 +19,8 @@ function Book() {
     const [orderBlock, setOrderBlock] = useState(false)
     const [price, setPrice] = useState()
 
+    const [value, setValue] = useState(1)
+
 
     useEffect(() => {
         dispath(apibook(params.bookId))
@@ -27,14 +29,14 @@ function Book() {
     useEffect(() => {
         if (book.price) {
             setPrice(
-                '$' + Number(book.price.replace('$', '') * count).toFixed(2)
+                '$' + Number(book.price.replace('$', '') * value).toFixed(2)
             )
         }
-    }, [count])
+    }, [value])
 
     useEffect(() => {
-        localStorage.setItem('book',JSON.stringify(cart))
-    },[cart])
+        localStorage.setItem('book', JSON.stringify(cart))
+    }, [cart])
 
 
     function buyProduct() {
@@ -42,7 +44,7 @@ function Book() {
             title: book.title,
             price: book.price,
             image: book.image,
-            count: count,
+            count: value,
             id: book.isbn13,
         }
         dispath(addBook(books))
@@ -74,9 +76,9 @@ function Book() {
                                     <div className='marker'>в наличии</div>
                                 </div>
                                 <div className="price__count">
-                                    <button className="price__btn" onClick={() => dispath(decrement())}><span className='price__minus'>-</span></button>
-                                    <input type="number" className="price__value" min='1' value={count} required />
-                                    <button className="price__btn" onClick={() => dispath(increment())}><span className='price__plus'>+</span></button>
+                                    <button className="price__btn" onClick={() => setValue(value > 1 ? value - 1 : 1)}><span className='price__minus'>-</span></button>
+                                    <input type="number" className="price__value" min='1' value={value} required />
+                                    <button className="price__btn" onClick={() => setValue(value + 1)}><span className='price__plus'>+</span></button>
                                 </div>
                             </div>
                             <button className="book__buy" onClick={buyProduct}>Купить</button>
