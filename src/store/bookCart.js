@@ -26,10 +26,28 @@ export const bookCart = createSlice({
                 state.book.push(action.payload);
             }
             localStorage.setItem('book', JSON.stringify(state.book))
-        }
+        },
+        bookCount: (state, action) => {
+            state.book.filter((book, index) => {
+                if (book.id === action.payload.id) {
+                    state.book[index].count = action.payload.count;
+                }
+            });
+            localStorage.setItem('book', JSON.stringify(state.book))
+        },
+        bookDelete: (state, action) => {
+            console.log(action.payload.id)
+            state.book.filter((book, index) => {
+                if (book.id === action.payload.id) {
+                    
+                    state.book.splice(index, 1)
+                }
+            });
+            localStorage.setItem('book', JSON.stringify(state.book))
+        },
     },
 })
 
-export const { addBook, apiAddBook } = bookCart.actions
+export const { addBook, apiAddBook, bookCount, bookDelete } = bookCart.actions
 
 export default bookCart.reducer

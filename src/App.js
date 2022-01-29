@@ -10,8 +10,9 @@ import IndividualBinding from './pages/IndividualBinding';
 import Contacts from './pages/Contacts';
 import Error from "./pages/Error";
 import Footer from "./components/Footer";
-import Order from "./pages/Order";
+import ShopCart from "./pages/ShopCart";
 import Book from "./pages/Book";
+import Order from './pages/Order'
 
 const Wrapper = ({ children }) => {
   const location = useLocation();
@@ -37,6 +38,7 @@ function App() {
           <Route path='WorldBooks' element={<WorldBooks />} />
           <Route path='IndividualBinding' element={<IndividualBinding />} />
           <Route path='contacts' element={<Contacts />} />
+          <Route path='cart' element={<ShopCart />} />
           <Route path='order' element={<Order />} />
           <Route path="*" element={<Error />} />
         </Routes>
