@@ -5,8 +5,7 @@ import Breadcrumb from '../components/Breadcrumb';
 import { useParams } from 'react-router-dom';
 import BookInfo from '../components/book/BookInfo';
 import QuickOrder from '../components/book/QuickOrder';
-import { increment, decrement } from '../store/bookCount';
-import { addBook } from '../store/bookCart';
+import { addBook, apiAddBook } from '../store/bookCart';
 
 
 
@@ -14,11 +13,8 @@ function Book() {
     const params = useParams();
     const dispath = useDispatch();
     const book = useSelector((store) => store.book.book);
-    const count = useSelector((state) => state.count.value);
-    const cart = useSelector((state) => state.cart.book);
     const [orderBlock, setOrderBlock] = useState(false)
     const [price, setPrice] = useState()
-
     const [value, setValue] = useState(1)
 
 
@@ -35,16 +31,19 @@ function Book() {
     }, [value])
 
     useEffect(() => {
-        localStorage.setItem('book', JSON.stringify(cart))
-    }, [cart])
-
+        if (localStorage.getItem('book')) {
+            const response = JSON.parse(localStorage.getItem('book'));
+            console.log(typeof response)
+            dispath(apiAddBook(response))
+        }
+    }, [])
 
     function buyProduct() {
         const books = {
+            count: value,
             title: book.title,
             price: book.price,
             image: book.image,
-            count: value,
             id: book.isbn13,
         }
         dispath(addBook(books))
