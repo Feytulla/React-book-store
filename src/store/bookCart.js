@@ -39,15 +39,18 @@ export const bookCart = createSlice({
             console.log(action.payload.id)
             state.book.filter((book, index) => {
                 if (book.id === action.payload.id) {
-                    
+
                     state.book.splice(index, 1)
                 }
             });
             localStorage.setItem('book', JSON.stringify(state.book))
         },
+        bookClear: (state) => {
+            state.book = []
+        }
     },
 })
 
-export const { addBook, apiAddBook, bookCount, bookDelete } = bookCart.actions
+export const { addBook, apiAddBook, bookCount, bookDelete, bookClear } = bookCart.actions
 
 export default bookCart.reducer

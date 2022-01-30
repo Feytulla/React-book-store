@@ -12,7 +12,8 @@ import Error from "./pages/Error";
 import Footer from "./components/Footer";
 import ShopCart from "./pages/ShopCart";
 import Book from "./pages/Book";
-import Order from './pages/Order'
+import Order from './pages/Order';
+import DoneOrder from './pages/DoneOrder';
 
 const Wrapper = ({ children }) => {
   const location = useLocation();
@@ -40,6 +41,7 @@ function App() {
           <Route path='contacts' element={<Contacts />} />
           <Route path='cart' element={<ShopCart />} />
           <Route path='order' element={<Order />} />
+          <Route path='order/doneOrder' element={<DoneOrder />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </Wrapper>

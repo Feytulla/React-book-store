@@ -1,16 +1,50 @@
+import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import Breadcrumb from '../components/Breadcrumb';
-import DoneOrder from '../components/DoneOrder';
+import BookTable from '../components/shopCart/BookTable';
+import { bookClear } from '../store/bookCart';
+
+
+import { useNavigate } from "react-router-dom";
 
 function Order() {
+    const dispath = useDispatch();
+    const navigate = useNavigate();
+    const books = useSelector((state) => state.cart.book);
+    const [totalPrice, setTotalPrice] = useState(0);
+
+
+    useEffect(() => {
+        if (books) {
+            let total = 0
+
+            books.forEach(book => {
+                let price = +book.price.replace('$', '');
+                let count = +book.count;
+                let sum = price * count;
+                total += sum
+            })
+            setTotalPrice(total)
+        }
+    }, [books])
+
+    function submitHandler(event) {
+        event.preventDefault();
+        navigate("/order/doneOrder");
+
+        localStorage.removeItem('book');
+        dispath(bookClear())
+    }
+
     return (
         <>
             <div className="containers">
                 <Breadcrumb currentPage={'Оформление заказа'} />
-                <DoneOrder />
                 <h1 className="title mb-4">Оформление заказа</h1>
                 <div className="content-container">
                     <h5 className='h5'>Авторизация (если вы уже зарегистрированы на сайте)</h5>
-                    <form className='sign-form d-flex'>
+                    <form className='sign-form d-flex' >
                         <div class="mb-3 sign-form__email">
                             <label for="exampleInputEmail1" class="form-label">Ваш email:</label>
                             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введите Ваш email" />
@@ -25,7 +59,7 @@ function Order() {
                     </form>
                 </div>
                 <h4 className="h4 order__h4">ИЛИ</h4>
-                <form class="needs-validation" novalidate>
+                <form class="needs-validation" onSubmit={submitHandler} novalidate>
                     <div className="content-container">
                         <h5 className="h5">Введите ваши данные (для регистрации на сайте отметьте чекбокс внизу)</h5>
                         <div className="row g-3 reg-form">
@@ -63,8 +97,8 @@ function Order() {
                         <strong>Доставка Новой Почтой</strong>
                         <div class="col-12 mt-3">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="true" id="invalidCheck2" required />
-                                <label class="form-check-label" for="invalidCheck2">
+                                <input class="form-check-input" type="checkbox" value="true" id="invalidCheck3" required />
+                                <label class="form-check-label" for="invalidCheck3">
                                     Создать аккаунт для покупок в дальнейшем.
                                 </label>
                                 <div className="marker">Цена по запросу!</div>
@@ -95,6 +129,14 @@ function Order() {
                         </div>
                     </div>
                     <h5 className="h5 mt-4 mb-4">Товары в корзине</h5>
+                    <div className="content-container">
+                        <BookTable />
+                        <div className="total">
+                            <div className='total__sum'><span className="total__text">Итого:</span>
+                                <span className="total__price">${totalPrice.toFixed(2)}</span></div>
+                            <div className='total__button mb-4'><button type="submit" className="total__btn">Продолжить</button></div>
+                        </div>
+                    </div>
                 </form>
             </div>
         </>
