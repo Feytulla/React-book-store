@@ -82,7 +82,7 @@ tbody {
 }
 
 .total__sum {
-    margin-right: 160px;
+    margin: 0 60px 10px 0;
 }
 
 .total__text {
@@ -109,7 +109,6 @@ tbody {
     height: 46px;
     background: $orange-color;
     border-radius: 8px;
-    // margin: 28px 68px 0 0;
 }
 
 .total__btn {

@@ -41,22 +41,33 @@ function ShopModal({ toggleShopModal }) {
                         <div className="shop-modal__close" onClick={() => toggleShopModal()}>&times;</div>
                     </div>
                     <div className="shop-modal__list">
+
                         {
-                            books && books.map(book => {
+                            books.length ? books.map(book => {
                                 return (
-                                    <BookList book={book} />
+                                    <BookList book={book} key={book.id} />
                                 )
                             })
+                                :
+                                <div className="shop-modal__list-null title">Корзина пуста</div>
                         }
                     </div>
                     <div className="modal-total">
-                        <div className="modal-total__price">
-                            <span className="modal-total__text">Итого:</span>
-                            <span className="modal-total__total-price h4">${totalPrice.toFixed(2)}</span>
-                        </div>
-                        <div>Taxes and shipping calculated at checkout</div>
-                        <div className="modal-total__order total__button"><button className="total__btn"><Link to='order'>Оформить заказ</Link></button></div>
-                        <div className="modal-total__cart"><Link to='cart' className="modal-total__cart-link">Перейти в корзину</Link></div>
+
+
+                        {
+                            books.length ?
+                                <>
+                                    <div className="modal-total__price">
+                                        <span className="modal-total__text">Итого:</span>
+                                        <span className="modal-total__total-price h4">${totalPrice.toFixed(2)}</span>
+                                    </div>
+                                    <div>Taxes and shipping calculated at checkout</div>
+                                    <div className="modal-total__order total__button"><button className="total__btn" onClick={() => toggleShopModal()}><Link to='order'>Оформить заказ</Link></button></div>
+                                    <div className="modal-total__cart" onClick={() => toggleShopModal()}><Link to='cart' className="modal-total__cart-link">Перейти в корзину</Link></div>
+                                </>
+                                : null
+                        }
                     </div>
                 </div>
             </div>
