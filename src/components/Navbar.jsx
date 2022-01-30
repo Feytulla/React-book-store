@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import ShopModal from "./modal/ShopModal";
 
 function Navbar() {
+    const modalRef = useRef();
+    const [shopModal, setShopModal] = useState(false);
+    useOnClickOutside(modalRef, () => setShopModal(false));
+
+    function toggleShopModal() {
+        setShopModal(false)
+    }
+
     return (
         <>
             <div className="gradien-line"></div>
@@ -18,7 +27,7 @@ function Navbar() {
                             <div className="collapse navbar-collapse" id="navbarNav">
                                 <ul className="navbar-nav">
                                     <li className="nav-item">
-                                        <NavLink  className={({ isActive }) => isActive ? "nav-link nav-active" : "nav-link"} to="about">О нас</NavLink>
+                                        <NavLink className={({ isActive }) => isActive ? "nav-link nav-active" : "nav-link"} to="about">О нас</NavLink>
                                     </li>
                                     <li className="nav-item">
                                         <NavLink className={({ isActive }) => isActive ? "nav-link nav-active" : "nav-link"} to="PaymentAndDelivery">Оплата и доставка</NavLink>
@@ -36,10 +45,15 @@ function Navbar() {
                                         <NavLink className={({ isActive }) => isActive ? "nav-link nav-active" : "nav-link"} to="contacts">Контакты</NavLink>
                                     </li>
                                     <li className="nav-item">
-                                        <Link className="nav-link" to="/"><i className="fas fa-phone-alt"></i></Link> 
+                                        <Link className="nav-link" to="/"><i className="fas fa-phone-alt"></i></Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link className="nav-link" to="cart"><i className="fas fa-shopping-bag"></i></Link> 
+                                        <span className="nav-link" onClick={() => setShopModal(!shopModal)}><i className="fas fa-shopping-bag"></i></span>
+                                        {shopModal &&
+                                            <div ref={modalRef}>
+                                                <ShopModal toggleShopModal={toggleShopModal} />
+                                            </div>
+                                        }
                                     </li>
                                 </ul>
                             </div>
@@ -49,6 +63,27 @@ function Navbar() {
             </div>
         </>
     )
+}
+
+function useOnClickOutside(ref, handler) {
+    useEffect(
+        () => {
+            const listener = (event) => {
+
+                if (!ref.current || ref.current.contains(event.target)) {
+                    return;
+                }
+                handler(event);
+            };
+            document.addEventListener("mousedown", listener);
+            document.addEventListener("touchstart", listener);
+            return () => {
+                document.removeEventListener("mousedown", listener);
+                document.removeEventListener("touchstart", listener);
+            };
+        },
+        [ref, handler]
+    );
 }
 
 export default Navbar

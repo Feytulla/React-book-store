@@ -1,0 +1,67 @@
+import { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
+import BookList from "./BookList";
+import { apiAddBook } from "../../store/bookCart";
+
+function ShopModal({ toggleShopModal }) {
+
+    const dispath = useDispatch()
+    const books = useSelector((state) => state.cart.book);
+    const [totalPrice, setTotalPrice] = useState(0)
+
+
+    useEffect(() => {
+        if (localStorage.getItem('book')) {
+            const response = JSON.parse(localStorage.getItem('book'));
+            dispath(apiAddBook(response))
+        }
+    }, [])
+
+    useEffect(() => {
+        if (books) {
+            let total = 0
+
+            books.forEach(book => {
+                let price = +book.price.replace('$', '');
+                let count = +book.count;
+                let sum = price * count;
+                total += sum
+            })
+            setTotalPrice(total)
+        }
+    }, [books])
+
+    return (
+        <>
+            <div className="shop-modal">
+                <div className="modal-conteiner">
+                    <div className="shop-modal__head">
+                        <h5 className="h5">Корзина</h5>
+                        <div className="shop-modal__close" onClick={() => toggleShopModal()}>&times;</div>
+                    </div>
+                    <div className="shop-modal__list">
+                        {
+                            books && books.map(book => {
+                                return (
+                                    <BookList book={book} />
+                                )
+                            })
+                        }
+                    </div>
+                    <div className="modal-total">
+                        <div className="modal-total__price">
+                            <span className="modal-total__text">Итого:</span>
+                            <span className="modal-total__total-price h4">${totalPrice.toFixed(2)}</span>
+                        </div>
+                        <div>Taxes and shipping calculated at checkout</div>
+                        <div className="modal-total__order total__button"><button className="total__btn"><Link to='order'>Оформить заказ</Link></button></div>
+                        <div className="modal-total__cart"><Link to='cart' className="modal-total__cart-link">Перейти в корзину</Link></div>
+                    </div>
+                </div>
+            </div>
+        </>
+    )
+}
+
+export default ShopModal
