@@ -6,7 +6,7 @@ import { apiAddBook } from "../../store/bookCart";
 
 function ShopModal({ toggleShopModal }) {
 
-    const dispath = useDispatch()
+    const dispatch = useDispatch()
     const books = useSelector((state) => state.cart.book);
     const [totalPrice, setTotalPrice] = useState(0)
 
@@ -14,7 +14,7 @@ function ShopModal({ toggleShopModal }) {
     useEffect(() => {
         if (localStorage.getItem('book')) {
             const response = JSON.parse(localStorage.getItem('book'));
-            dispath(apiAddBook(response))
+            dispatch(apiAddBook(response))
         }
     }, [])
 

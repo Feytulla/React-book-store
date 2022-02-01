@@ -4,14 +4,14 @@ import BookList from "./BookList";
 import { apiAddBook } from '../../store/bookCart';
 
 function BookTable() {
-    const dispath = useDispatch();
+    const dispatch = useDispatch();
     const books = useSelector((state) => state.cart.book);
 
 
     useEffect(() => {
         if (localStorage.getItem('book')) {
             const response = JSON.parse(localStorage.getItem('book'));
-            dispath(apiAddBook(response))
+            dispatch(apiAddBook(response))
         }
     }, [])
 

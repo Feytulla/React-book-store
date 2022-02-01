@@ -38,7 +38,7 @@ function Navbar() {
                                         <NavLink className={({ isActive }) => isActive ? "nav-link nav-active" : "nav-link"} to="PaymentAndDelivery">Оплата и доставка</NavLink>
                                     </li>
                                     <li className="nav-item">
-                                        <NavLink className={({ isActive }) => isActive ? "nav-link nav-active" : "nav-link"} to="stocks">Акции</NavLink>
+                                        <NavLink className={({ isActive }) => isActive ? "nav-link nav-active" : "nav-link"} to="search">Акции</NavLink>
                                     </li>
                                     <li className="nav-item">
                                         <NavLink className={({ isActive }) => isActive ? "nav-link nav-active" : "nav-link"} to="WorldBooks">Мир Книг</NavLink>

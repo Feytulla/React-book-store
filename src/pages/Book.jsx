@@ -11,7 +11,7 @@ import { addBook, apiAddBook } from '../store/bookCart';
 
 function Book() {
     const params = useParams();
-    const dispath = useDispatch();
+    const dispatch = useDispatch();
     const book = useSelector((store) => store.book.book);
     const [orderBlock, setOrderBlock] = useState(false)
     const [price, setPrice] = useState()
@@ -19,8 +19,8 @@ function Book() {
 
 
     useEffect(() => {
-        dispath(apibook(params.bookId))
-    }, [dispath])
+        dispatch(apibook(params.bookId))
+    }, [dispatch])
 
     useEffect(() => {
         if (book.price) {
@@ -34,7 +34,7 @@ function Book() {
         if (localStorage.getItem('book')) {
             const response = JSON.parse(localStorage.getItem('book'));
             console.log(typeof response)
-            dispath(apiAddBook(response))
+            dispatch(apiAddBook(response))
         }
     }, [])
 
@@ -46,7 +46,7 @@ function Book() {
             image: book.image,
             id: book.isbn13,
         }
-        dispath(addBook(books))
+        dispatch(addBook(books))
     }
 
     return (

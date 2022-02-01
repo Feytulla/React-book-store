@@ -1,9 +1,38 @@
 .book {
     display: block;
-    width: 190px;
+    max-width: 250px;
+    width: 100%;
     height: auto;
     background: #fff;
     border-radius: 8px;
+    box-shadow: 0px 4px 15px rgba(189, 189, 189, 0.04);
+}
+
+.book__container {
+    padding: 10px 15px;
+}
+
+.book__btn {
+    all: unset;
+    width: 110px;
+    height: 30px;
+    border: 2px solid $orange-color;
+    box-sizing: border-box;
+    border-radius: 8px;
+    color: $orange-color;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 130%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 25px 0 0 0;
+    box-sizing: border-box;
+}
+.book__btn .fa-shopping-basket {
+    margin-right: 5px;
 }
 
 .book__image {
@@ -11,10 +40,6 @@
 
 .book__image img {
     width: 100%;
-}
-
-.book__info {
-    padding: 10px 15px;
 }
 
 .book__title {

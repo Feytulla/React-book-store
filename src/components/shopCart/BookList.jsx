@@ -4,18 +4,18 @@ import { bookCount, bookDelete } from '../../store/bookCart';
 
 
 function BookList({ book }) {
-    const dispath = useDispatch();
+    const dispatch = useDispatch();
     const [count, setCount] = useState(book.count)
     const [id, setId] = useState(book.id)
 
 
     useEffect(() => {
-        dispath(bookCount({ count, id }))
+        dispatch(bookCount({ count, id }))
     }, [count])
 
 
     function deleteBook(id) {
-        dispath(bookDelete({id}))
+        dispatch(bookDelete({id}))
     }
 
     return (

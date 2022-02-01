@@ -9,7 +9,7 @@ import { bookClear } from '../store/bookCart';
 import { useNavigate } from "react-router-dom";
 
 function Order() {
-    const dispath = useDispatch();
+    const dispatch = useDispatch();
     const navigate = useNavigate();
     const books = useSelector((state) => state.cart.book);
     const [totalPrice, setTotalPrice] = useState(0);
@@ -34,7 +34,7 @@ function Order() {
         navigate("/order/doneOrder");
 
         localStorage.removeItem('book');
-        dispath(bookClear())
+        dispatch(bookClear())
     }
 
     return (
