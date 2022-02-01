@@ -1,14 +1,19 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import ModalContact from "./modal/ModalContact";
 import ShopModal from "./modal/ShopModal";
 
 function Navbar() {
-    const modalRef = useRef();
+    const shopRef = useRef();
+    const contactRef = useRef();
     const [shopModal, setShopModal] = useState(false);
-    useOnClickOutside(modalRef, () => setShopModal(false));
+    const [contactModal, setContactModal] = useState(false)
+    useOnClickOutside(shopRef, () => setShopModal(false));
+    useOnClickOutside(contactRef, () => setContactModal(false));
 
     function toggleShopModal() {
         setShopModal(false)
+        setContactModal(false)
     }
 
     return (
@@ -45,17 +50,24 @@ function Navbar() {
                                         <NavLink className={({ isActive }) => isActive ? "nav-link nav-active" : "nav-link"} to="contacts">Контакты</NavLink>
                                     </li>
                                     <li className="nav-item">
-                                        <Link className="nav-link" to="/"><i className="fas fa-phone-alt"></i></Link>
+                                        <span className="nav-link" onClick={() => setContactModal(!contactModal)}><i className="fas fa-phone-alt"></i></span>
+                                        {contactModal &&
+                                            <div ref={contactRef}>
+                                                <ModalContact toggleShopModal={toggleShopModal} />
+                                            </div>
+                                        }
                                     </li>
+
                                     <li className="nav-item">
                                         <span className="nav-link" onClick={() => setShopModal(!shopModal)}><i className="fas fa-shopping-bag"></i></span>
                                         {shopModal &&
-                                            <div ref={modalRef}>
+                                            <div ref={shopRef}>
                                                 <ShopModal toggleShopModal={toggleShopModal} />
                                             </div>
                                         }
                                     </li>
                                 </ul>
+
                             </div>
                         </div>
                     </nav>
