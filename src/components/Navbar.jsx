@@ -1,15 +1,22 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useSelector } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
 import ModalContact from "./modal/ModalContact";
 import ShopModal from "./modal/ShopModal";
+import { apiAddBook } from "../store/bookCart";
+import { useDispatch } from "react-redux";
 
 function Navbar() {
+    const books = useSelector((state) => state.cart.book);
+    const dispatch = useDispatch()
     const shopRef = useRef();
     const contactRef = useRef();
     const [shopModal, setShopModal] = useState(false);
-    const [contactModal, setContactModal] = useState(false)
+    const [contactModal, setContactModal] = useState(false);
     useOnClickOutside(shopRef, () => setShopModal(false));
     useOnClickOutside(contactRef, () => setContactModal(false));
+
+
 
     function toggleShopModal() {
         setShopModal(false)
@@ -57,9 +64,12 @@ function Navbar() {
                                             </div>
                                         }
                                     </li>
-
-                                    <li className="nav-item">
-                                        <span className="nav-link" onClick={() => setShopModal(!shopModal)}><i className="fas fa-shopping-bag"></i></span>
+                                    <li className="nav-item" >
+                                        <span className="nav-link" onClick={() => setShopModal(!shopModal)}><i className="fas fa-shopping-bag"></i>
+                                            {
+                                                books.length ? <div className="product-counter"><i>{books.length}</i></div> : null
+                                            }
+                                        </span>
                                         {shopModal &&
                                             <div ref={shopRef}>
                                                 <ShopModal toggleShopModal={toggleShopModal} />
@@ -67,7 +77,6 @@ function Navbar() {
                                         }
                                     </li>
                                 </ul>
-
                             </div>
                         </div>
                     </nav>
