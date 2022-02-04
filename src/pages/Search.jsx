@@ -9,17 +9,12 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from 'react-router-dom';
 import { addValue } from "../store/search";
 import SearchInput from "../components/search/SearchInput";
+import Sorting from "../components/search/Sorting";
 
 function Search() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const pageNumber = useSelector((state) => state.search.pageNumber);
-
-    // const push = (event) => {
-    //     const value = event.target.value;
-    //     dispatch(addValue(value))
-    //     navigate(`/search/${value}/${pageNumber}`)
-    // }
 
     return (
         <>
@@ -27,6 +22,7 @@ function Search() {
                 <Breadcrumb currentPage={'Поиск'} />
                 <h1 className='title'>Поиск</h1>
                 <SearchInput />
+                <Sorting />
                 <SearchList />
                 <Pagination />
             </div>

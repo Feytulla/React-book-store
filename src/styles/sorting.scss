@@ -1,0 +1,59 @@
+.sorting {
+    display: flex;
+    margin: 25px 0 35px 0;
+}
+
+.sorting-col {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.sorting__columns,
+.sorting__row {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    background: #ffffff;
+    border: 1px solid #e7e7e7;
+    box-sizing: border-box;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.sorting__columns {
+    margin: 0 8px;
+}
+.columns-row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 15px;
+    height: 15px;
+}
+
+.columns-block {
+    display: block;
+    width: 4px;
+    height: 4px;
+    background: $orange-color;
+    margin-right: 1px;
+}
+
+.sorting__row {
+}
+
+.row-block {
+    width: 14px;
+    height: 4px;
+    background: rgba(158, 158, 158, 0.7);
+    margin-bottom: 1px;
+}
+
+.form-select {
+    border: 1px solid #e7e7e7;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 15px rgba(189, 189, 189, 0.04);
+    border-radius: 8px;
+    margin-left: 11px;
+}
