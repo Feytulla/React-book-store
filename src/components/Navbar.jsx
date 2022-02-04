@@ -16,7 +16,12 @@ function Navbar() {
     useOnClickOutside(shopRef, () => setShopModal(false));
     useOnClickOutside(contactRef, () => setContactModal(false));
 
-
+    useEffect(() => {
+        if (localStorage.getItem('book')) {
+            const response = JSON.parse(localStorage.getItem('book'));
+            dispatch(apiAddBook(response))
+        }
+    }, [])
 
     function toggleShopModal() {
         setShopModal(false)
@@ -43,9 +48,6 @@ function Navbar() {
                                     </li>
                                     <li className="nav-item">
                                         <NavLink className={({ isActive }) => isActive ? "nav-link nav-active" : "nav-link"} to="PaymentAndDelivery">Оплата и доставка</NavLink>
-                                    </li>
-                                    <li className="nav-item">
-                                        <NavLink className={({ isActive }) => isActive ? "nav-link nav-active" : "nav-link"} to="search">Акции</NavLink>
                                     </li>
                                     <li className="nav-item">
                                         <NavLink className={({ isActive }) => isActive ? "nav-link nav-active" : "nav-link"} to="WorldBooks">Мир Книг</NavLink>

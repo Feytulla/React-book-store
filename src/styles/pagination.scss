@@ -1,0 +1,20 @@
+.page-link.active {
+    background: $orange-color;
+    color: $white-color;
+}
+
+.page-item {
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.page-link {
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: $black-color;
+    border-radius: 8px;
+    border: 0px;
+    margin-right: 5px;
+}

@@ -2,21 +2,11 @@ import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import BookList from "./BookList";
-import { apiAddBook } from "../../store/bookCart";
 
 function ShopModal({ toggleShopModal }) {
-
-    const dispatch = useDispatch()
     const books = useSelector((state) => state.cart.book);
     const [totalPrice, setTotalPrice] = useState(0)
 
-
-    useEffect(() => {
-        if (localStorage.getItem('book')) {
-            const response = JSON.parse(localStorage.getItem('book'));
-            dispatch(apiAddBook(response))
-        }
-    }, [])
 
     useEffect(() => {
         if (books) {

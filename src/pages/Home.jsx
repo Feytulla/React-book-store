@@ -3,10 +3,11 @@ import Partners from "../components/home/Partners";
 import About from "../components/home/About";
 import Catalog from "../components/home/Catalog";
 import HomeSlider from "../components/home/HomeSlider";
-import Search from "../components/SearchComp";
+// import Search from "../components/SearchComp";
 import Books from "../components/home/Books";
 import { useDispatch } from "react-redux";
 import { valueClear } from '../store/search';
+import SearchInput from "../components/home/SearchInput";
 
 function Home() {
     const dispatch = useDispatch()
@@ -24,7 +25,7 @@ function Home() {
                         </div>
                         <div className="col-6 col-sm-9">
                             <HomeSlider />
-                            <Search />
+                            <SearchInput />
                             <Books />
                         </div>
                     </div>

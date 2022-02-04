@@ -33,7 +33,6 @@ function Book() {
     useEffect(() => {
         if (localStorage.getItem('book')) {
             const response = JSON.parse(localStorage.getItem('book'));
-            console.log(typeof response)
             dispatch(apiAddBook(response))
         }
     }, [])

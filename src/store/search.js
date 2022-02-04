@@ -6,13 +6,14 @@ export const apiSearch = createAsyncThunk(
     async (request, { rejectWithValue }) => {
         try {
             if (request) {
-                const response = await axios.get(`https://api.itbook.store/1.0/search/${request}`);
-                console.log(response)
+
+                const response = await axios.get(`https://api.itbook.store/1.0/search/${request.result}/${request.pageNumber}`);
                 if (!response.status) {
                     throw new Error('Server Error!');
                 }
+                
 
-                const data = response.data.books
+                const data = response.data
                 return data
             }
 
@@ -29,6 +30,7 @@ export const searchBook = createSlice({
     initialState: {
         books: [],
         value: '',
+        pageNumber: 1,
         status: null,
         error: null,
     },
@@ -39,6 +41,9 @@ export const searchBook = createSlice({
         valueClear: (state) => {
             state.value = '';
         },
+        addPageNumber: (state, action) => {
+            state.pageNumber = action.payload
+        }
     },
     extraReducers: {
         [apiSearch.pending]: (state) => {
@@ -56,6 +61,6 @@ export const searchBook = createSlice({
     }
 })
 
-export const { addValue, valueClear } = searchBook.actions
+export const { addValue, valueClear,addPageNumber } = searchBook.actions
 
 export default searchBook.reducer

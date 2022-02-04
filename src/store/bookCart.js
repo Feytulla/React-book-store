@@ -36,7 +36,6 @@ export const bookCart = createSlice({
             localStorage.setItem('book', JSON.stringify(state.book))
         },
         bookDelete: (state, action) => {
-            console.log(action.payload.id)
             state.book.filter((book, index) => {
                 if (book.id === action.payload.id) {
 

@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from 'react';
 
 import Loading from '../Loading';
 import SearchItem from "./SearchItem";
@@ -15,7 +16,7 @@ function SearchList() {
                 {status === 'loading' && <Loading />}
                 {error && <h2>An error occured: {error}</h2>}
                 {
-                    books && books.map((book, index) => {
+                    books && books.books.map((book, index) => {
                         return (
                             <SearchItem book={book} key={index} />
                         )

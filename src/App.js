@@ -15,6 +15,8 @@ import Book from "./pages/Book";
 import Order from './pages/Order';
 import DoneOrder from './pages/DoneOrder';
 import Search from './pages/Search';
+import SearchList from "./components/search/SearchList";
+import Pagination from "./components/search/Pagination";
 
 const Wrapper = ({ children }) => {
   const location = useLocation();
@@ -43,7 +45,11 @@ function App() {
           <Route path='cart' element={<ShopCart />} />
           <Route path='order' element={<Order />} />
           <Route path='order/doneOrder' element={<DoneOrder />} />
-          <Route path='search' element={<Search />} />
+          <Route path='search' element={<Search />}>
+            <Route path=":searchResult" element={<SearchList />} >
+              <Route path=":pageNumber" element={<Pagination />} />
+            </Route>
+          </Route>
           <Route path="*" element={<Error />} />
         </Routes>
       </Wrapper>
