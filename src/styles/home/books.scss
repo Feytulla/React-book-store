@@ -66,3 +66,59 @@
     line-height: 110%;
     color: $black-color;
 }
+
+.book-w {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 15px rgba(189, 189, 189, 0.04);
+}
+
+.book-w__container {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.book-w__link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.book-w__image {
+    max-width: 206px;
+    width: 100%;
+    height: 150px;
+    text-align: center;
+}
+
+.book-w__image img {
+    max-width: 136px;
+    width: 100%;
+}
+
+.book-w__head {
+    width: 100%;
+}
+
+.book-w__subtitle {
+    color: $black-color;
+}
+
+.book-w__body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 200px;
+    width: 100%;
+    height: 130px;
+}
+
+.book-w__price {
+    font-family: Montserrat;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 160%;
+    color: $black-color;
+}

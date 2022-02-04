@@ -1,28 +1,26 @@
+import { useContext } from "react";
+import Context from "../../context";
+
+
 function Sorting() {
+    const { toggleMazay, toggleWidth,mozActive,widActive } = useContext(Context)
+    
+
+    
     return (
         <>
             <div className="sorting d-flex">
                 <span>Вид:</span>
                 <div className="sorting-col">
                     <div className="d-flex">
-                        <div className="sorting__columns">
+                        <div className="sorting__columns" onClick={() => toggleMazay()}>
                             <div className="columns-row">
-                                <span className="columns-block col-4"></span>
-                                <span className="columns-block col-4"></span>
-                                <span className="columns-block col-4"></span>
-                                <span className="columns-block col-4"></span>
-                                <span className="columns-block col-4"></span>
-                                <span className="columns-block col-4"></span>
-                                <span className="columns-block col-4"></span>
-                                <span className="columns-block col-4"></span>
-                                <span className="columns-block col-4"></span>
+                                <div className={`columns-row__mazay ${mozActive}`}></div>
                             </div>
                         </div>
-                        <div className="sorting__row">
+                        <div className="sorting__row" onClick={() => toggleWidth()}>
                             <div className="columns-row">
-                                <span className="row-block"></span>
-                                <span className="row-block"></span>
-                                <span className="row-block"></span>
+                                <div className={`columns-row__width ${widActive}`}></div>
                             </div>
                         </div>
                     </div>
