@@ -19,7 +19,7 @@ function SearchItemWidth({ book, buy }) {
                             </div>
                         </Link>
                         <div className="book-w__body">
-                            <div className='book-w__price'>{book.price}</div>
+                            <div className='book-w__price'>${book.price}</div>
                             <button className="book__btn" onClick={buy}><i class="fas fa-shopping-basket"></i>Купить</button>
                         </div>
                     </div>

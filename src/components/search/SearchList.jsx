@@ -8,7 +8,7 @@ import SearchItem from "./SearchItem";
 
 function SearchList() {
     const { status, error } = useSelector((state) => state.search);
-    const books = useSelector((state) => state.search.books[0]);
+    const books = useSelector((state) => state.search.bookItems[0]);
 
     return (
         <>
@@ -16,7 +16,7 @@ function SearchList() {
                 {status === 'loading' && <Loading />}
                 {error && <h2>An error occured: {error}</h2>}
                 {
-                    books && books.books.map((book, index) => {
+                    books && books.map((book, index) => {
                         return (
                             <SearchItem book={book} key={index} />
                         )

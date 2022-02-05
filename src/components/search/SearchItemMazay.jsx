@@ -15,7 +15,7 @@ function SearchItemMazay({ book,buy }) {
                             <div className="book__info">
                                 <h6 className='book__title'>{book.title}</h6>
                                 {/* <div className='book__subtitle'>{book.subtitle}</div> */}
-                                <div className='book__price'>{book.price}</div>
+                                <div className='book__price'>${book.price}</div>
                             </div>
                         </Link>
                         <button className="book__btn" onClick={buy}><i class="fas fa-shopping-basket"></i>Купить</button>

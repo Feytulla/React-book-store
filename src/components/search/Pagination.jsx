@@ -11,7 +11,7 @@ function Pagination() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const param = useParams();
-    const data = useSelector((state) => state.search.books[0]);
+    const data = useSelector((state) => state.search.data[0]);
     const [totalBooks, setTotalBooks] = useState(0);
     const pageNumbers = [];
     const [prev, setPrev] = useState(1);

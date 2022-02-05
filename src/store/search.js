@@ -11,7 +11,7 @@ export const apiSearch = createAsyncThunk(
                 if (!response.status) {
                     throw new Error('Server Error!');
                 }
-                
+
 
                 const data = response.data
                 return data
@@ -28,9 +28,11 @@ export const apiSearch = createAsyncThunk(
 export const searchBook = createSlice({
     name: 'searchBook',
     initialState: {
-        books: [],
+        data: [],
+        bookItems: [],
         value: '',
         pageNumber: 1,
+        filter: 'default',
         status: null,
         error: null,
     },
@@ -43,17 +45,26 @@ export const searchBook = createSlice({
         },
         addPageNumber: (state, action) => {
             state.pageNumber = action.payload
+        },
+        addFilter: (state, action) => {
+            state.filter = action.payload.value;
+        },
+        addBooks: (state, action) => {
+            state.bookItems = []
+            state.bookItems.push(action.payload)
         }
     },
     extraReducers: {
         [apiSearch.pending]: (state) => {
             state.status = 'loading';
             state.error = null;
-            state.books = []
+            state.data = []
+            state.bookItems = []
         },
         [apiSearch.fulfilled]: (state, action) => {
             state.status = 'resolved';
-            state.books.push(action.payload);
+            state.data.push(action.payload);
+            state.bookItems.push(action.payload.books);
         },
         [apiSearch.rejected]: (state, action) => {
             state.error = action.payload
@@ -61,6 +72,6 @@ export const searchBook = createSlice({
     }
 })
 
-export const { addValue, valueClear,addPageNumber } = searchBook.actions
+export const { addValue, valueClear, addPageNumber, addFilter, addBooks } = searchBook.actions
 
 export default searchBook.reducer

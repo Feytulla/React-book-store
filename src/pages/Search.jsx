@@ -18,7 +18,7 @@ function Search() {
     const pageNumber = useSelector((state) => state.search.pageNumber);
     const [mazay, setMazay] = useState(true);
     const [widthBlock, setWidthBlock] = useState(false);
-    const [mozActive,setMozActive] = useState();
+    const [mozActive,setMozActive] = useState(true);
     const [widActive,setWidActive] = useState();
 
 
