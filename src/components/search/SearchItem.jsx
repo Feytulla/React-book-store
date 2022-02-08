@@ -1,6 +1,6 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 import { addBook } from '../../store/bookCart';
 import SearchItemMazay from "./SearchItemMazay";
 import SearchItemWidth from "./SearchItemWidth";
@@ -9,8 +9,6 @@ import Context from "../../context";
 function SearchItem({ book }) {
     const dispatch = useDispatch();
     const { mazay, widthBlock } = useContext(Context)
-
-
 
     function buyProduct() {
         const books = {
@@ -34,5 +32,9 @@ function SearchItem({ book }) {
         </>
     )
 }
+
+SearchItem.propTypes = {
+    book: PropTypes.object.isRequired
+};
 
 export default SearchItem

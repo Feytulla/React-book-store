@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 function SearchItemWidth({ book, buy }) {
-
-
     return (
         <>
             <div className="col-12 mb-3">
@@ -14,13 +13,12 @@ function SearchItemWidth({ book, buy }) {
                             </div>
                             <div className="book-w__head">
                                 <h6 className='book__title'>{book.title}</h6>
-                                {/* <div className='book-w__subtitle'>{book.subtitle}</div> */}
-                                <div className='book-w__subtitle'>Данное издание «Кобзаря» — одно из красивейших изданий самой ценной книги украинской литературы, проиллюстрированное художественными работами самого Шевченка. После смерти поэта осталось огромное наследие произведений живописи и графики. Несмотря на это, исследователи творчества поэта ещё в 1900 ..</div>
+                                <div className='book-w__subtitle'>{book.subtitle}</div>
                             </div>
                         </Link>
                         <div className="book-w__body">
-                            <div className='book-w__price'>${book.price}</div>
-                            <button className="book__btn" onClick={buy}><i class="fas fa-shopping-basket"></i>Купить</button>
+                            <div className='book-w__price'>${book.price.replace('$','')}</div>
+                            <button className="book__btn" onClick={buy}><i className="fas fa-shopping-basket"></i>Купить</button>
                         </div>
                     </div>
                 </div>
@@ -28,5 +26,10 @@ function SearchItemWidth({ book, buy }) {
         </>
     )
 }
+
+SearchItemWidth.propTypes = {
+    book: PropTypes.object.isRequired,
+    buy: PropTypes.func
+};
 
 export default SearchItemWidth

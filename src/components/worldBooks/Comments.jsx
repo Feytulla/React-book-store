@@ -37,7 +37,6 @@ function Comments() {
             setCommentsUser(commentsUser.concat([{ name: name, comment: comment }]))
 
         }
-
         setName('')
         setEmail('')
         setComment('')
@@ -57,19 +56,19 @@ function Comments() {
             <div className="content-container">
                 <h5 className="h5">Оставить комментарий</h5>
                 <form className="form" onSubmit={handleSubmit}>
-                    <div class="mb-3 form__name">
-                        <label class="form-label">Ваше имя:</label>
-                        <input type="text" class="form-control" placeholder="Введите Ваше имя" value={name} onChange={e => setName(e.target.value)} />
+                    <div className="mb-3 form__name">
+                        <label className="form-label">Ваше имя:</label>
+                        <input type="text" className="form-control" placeholder="Введите Ваше имя" value={name} onChange={e => setName(e.target.value)} />
                     </div>
-                    <div class="mb-3 form__email">
-                        <label for="exampleInputEmail1" class="form-label">Ваш email:</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введите Ваш email" value={email} onChange={e => setEmail(e.target.value)} />
+                    <div className="mb-3 form__email">
+                        <label for="exampleInputEmail1" clclassNameass="form-label">Ваш email:</label>
+                        <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введите Ваш email" value={email} onChange={e => setEmail(e.target.value)} />
                     </div>
-                    <div class="mb-3 form__comment">
-                        <label class="form-label">Ваш комментарий:</label>
+                    <div className="mb-3 form__comment">
+                        <label className="form-label">Ваш комментарий:</label>
                         <textarea name="comment" id="" placeholder="Введите Ваш комментарий" value={comment} onChange={e => setComment(e.target.value)}></textarea>
                     </div>
-                    <button type="submit" class="btn form__btn">Отправить</button>
+                    <button type="submit" className="btn form__btn">Отправить</button>
                 </form>
             </div>
         </>

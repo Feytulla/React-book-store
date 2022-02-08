@@ -1,16 +1,15 @@
 import { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import BookList from "./BookList";
 
 function ShopModal({ toggleShopModal }) {
     const books = useSelector((state) => state.cart.book);
-    const [totalPrice, setTotalPrice] = useState(0)
-
+    const [totalPrice, setTotalPrice] = useState(0);
 
     useEffect(() => {
         if (books) {
-            let total = 0
+            let total = 0;
 
             books.forEach(book => {
                 let price = +book.price.replace('$', '');
@@ -31,7 +30,6 @@ function ShopModal({ toggleShopModal }) {
                         <div className="shop-modal__close" onClick={() => toggleShopModal()}>&times;</div>
                     </div>
                     <div className="shop-modal__list">
-
                         {
                             books.length ? books.map(book => {
                                 return (
@@ -43,8 +41,6 @@ function ShopModal({ toggleShopModal }) {
                         }
                     </div>
                     <div className="modal-total">
-
-
                         {
                             books.length ?
                                 <>

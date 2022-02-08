@@ -7,11 +7,9 @@ function BookList({ book }) {
         const [count, setCount] = useState(book.count)
         const [id, setId] = useState(book.id)
 
-
         useEffect(() => {
             dispatch(bookCount({ count, id }))
         }, [count])
-
 
         function deleteBook(id) {
             dispatch(bookDelete({ id }))

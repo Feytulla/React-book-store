@@ -1,18 +1,16 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
+import PropTypes from 'prop-types';
 import { bookCount, bookDelete } from '../../store/bookCart';
-
 
 function BookList({ book }) {
     const dispatch = useDispatch();
     const [count, setCount] = useState(book.count)
     const [id, setId] = useState(book.id)
 
-
     useEffect(() => {
         dispatch(bookCount({ count, id }))
     }, [count])
-
 
     function deleteBook(id) {
         dispatch(bookDelete({id}))
@@ -35,5 +33,9 @@ function BookList({ book }) {
         </>
     )
 }
+
+BookList.propTypes = {
+    book: PropTypes.object.isRequired,
+};
 
 export default BookList

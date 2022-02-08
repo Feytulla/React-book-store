@@ -4,7 +4,6 @@ import BookTotal from '../components/shopCart/BookTotal';
 
 function ShopCart() {
     
-
     return (
         <>
             <div className="containers">

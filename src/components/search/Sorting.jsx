@@ -11,7 +11,6 @@ function Sorting() {
     const { toggleMazay, toggleWidth, mozActive, widActive } = useContext(Context)
     const books = useSelector((state) => state.search.data[0])
     const booksFilter = useSelector((state) => state.search.filter)
-    const bookItems = useSelector((state) => state.search.bookItems)
 
     function handleChange(event) {
         const value = event.target.value
@@ -23,7 +22,7 @@ function Sorting() {
             if (booksFilter === 'low') {
                 const booksList = []
 
-                books.books.forEach((book, index) => {
+                books.books.forEach((book) => {
                     const mass = {
                         title: book.title,
                         subtitle: book.subtitle,
@@ -39,7 +38,7 @@ function Sorting() {
             } else if (booksFilter === 'high') {
                 const booksList = []
 
-                books.books.forEach((book, index) => {
+                books.books.forEach((book) => {
                     const mass = {
                         title: book.title,
                         subtitle: book.subtitle,
@@ -57,7 +56,6 @@ function Sorting() {
             }
         }
     }, [booksFilter, books])
-
 
     return (
         <>
@@ -78,7 +76,7 @@ function Sorting() {
                     </div>
                     <div className="d-flex justify-content-center align-items-center">
                         <span>Сортировка: </span>
-                        <select class="form-select" value={booksFilter} onChange={handleChange} aria-label="Default select example">
+                        <select className="form-select" value={booksFilter} onChange={handleChange} aria-label="Default select example">
                             <option selected value="default">По умолчанию</option>
                             <option value="low">Сначала дешёвые</option>
                             <option value="high">Сначала дорогие</option>

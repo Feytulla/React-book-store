@@ -1,17 +1,13 @@
-import { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import { apiSearch } from '../../store/search';
 import { addValue } from '../../store/search';
 import { addPageNumber } from '../../store/search';
 
-
-
-
 function SearchInput() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const value = useSelector((state) => state.search.value);
     const params = useParams();
     const result = params.searchResult;
     const pageNumber = params.pageNumber;

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 function SearchItemMazay({ book,buy }) {
-
 
     return (
         <>
@@ -14,16 +14,20 @@ function SearchItemMazay({ book,buy }) {
                             </div>
                             <div className="book__info">
                                 <h6 className='book__title'>{book.title}</h6>
-                                {/* <div className='book__subtitle'>{book.subtitle}</div> */}
-                                <div className='book__price'>${book.price}</div>
+                                <div className='book__price'>${book.price.replace('$','')}</div>
                             </div>
                         </Link>
-                        <button className="book__btn" onClick={buy}><i class="fas fa-shopping-basket"></i>Купить</button>
+                        <button className="book__btn" onClick={buy}><i className="fas fa-shopping-basket"></i>Купить</button>
                     </div>
                 </div>
             </div>
         </>
     )
 }
+
+SearchItemMazay.propTypes = {
+    book: PropTypes.object.isRequired,
+    buy: PropTypes.func
+};
 
 export default SearchItemMazay

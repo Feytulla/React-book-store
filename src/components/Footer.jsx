@@ -22,7 +22,7 @@ function Footer() {
                         <div className="col-12 col-md-3 mt-4 mt-md-0 footer__col">
                             <h3 className="footer__title">Контакты</h3>
                             <ul className='footer__items mt-4'>
-                                <li className='footer__item d-flex align-items-center'><i class="fas fa-map-marker-alt"></i><div className='footer__text'>Украина, Одесса Космонавта Комарова, 10</div></li>
+                                <li className='footer__item d-flex align-items-center'><i className="fas fa-map-marker-alt"></i><div className='footer__text'>Украина, Одесса Космонавта Комарова, 10</div></li>
                                 <li className='footer__item d-flex align-items-center'>
                                     <i className="fas fa-phone-alt"></i>
                                     <div className='footer__text'>
@@ -30,15 +30,15 @@ function Footer() {
                                         <div>+38 098 950-13-30</div>
                                     </div>
                                 </li>
-                                <li className='footer__item d-flex align-items-center'><i class="fas fa-envelope"></i><span className='footer__text'>kniginya.com@gmail.com</span></li>
+                                <li className='footer__item d-flex align-items-center'><i className="fas fa-envelope"></i><span className='footer__text'>kniginya.com@gmail.com</span></li>
                             </ul>
                         </div>
                         <div className="col-12 col-md-3 footer__col">
                             <h3 className="footer__title">Социальные сети</h3>
                             <div className="mt-4">
-                                <a href="" className='footer__social-link'><i class="fab fa-facebook-f"></i></a>
-                                <a href="" className='footer__social-link'><i class="fab fa-twitter"></i></a>
-                                <a href="" className='footer__social-link'><i class="fab fa-instagram"></i></a>
+                                <a href="" className='footer__social-link'><i className="fab fa-facebook-f"></i></a>
+                                <a href="" className='footer__social-link'><i className="fab fa-twitter"></i></a>
+                                <a href="" className='footer__social-link'><i className="fab fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>

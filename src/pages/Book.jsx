@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import book, { apibook } from '../store/book';
+import { apibook } from '../store/book';
 import Breadcrumb from '../components/Breadcrumb';
 import { useParams } from 'react-router-dom';
 import BookInfo from '../components/book/BookInfo';

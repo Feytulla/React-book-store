@@ -11,8 +11,8 @@ function Contacts() {
                     <div className="row">
                         <div className="col-12 col-sm-6 col-md-4">
                             <ul className='contact__items mt-4'>
-                                <li className='contact__item d-flex align-items-center'><i class="fas fa-clock icon-color"></i><span className='contact__text'>с 10 до 21</span></li>
-                                <li className='contact__item d-flex align-items-center'><i class="fas fa-map-marker-alt icon-color"></i><span className='contact__text'>Украина, Одесса Космонавта Комарова, 10</span></li>
+                                <li className='contact__item d-flex align-items-center'><i className="fas fa-clock icon-color"></i><span className='contact__text'>с 10 до 21</span></li>
+                                <li className='contact__item d-flex align-items-center'><i className="fas fa-map-marker-alt icon-color"></i><span className='contact__text'>Украина, Одесса Космонавта Комарова, 10</span></li>
                                 <li className='contact__item d-flex align-items-center'>
                                     <i className="fas fa-phone-alt icon-color"></i>
                                     <div className='contact__text'>
@@ -20,7 +20,7 @@ function Contacts() {
                                         <div>+38 098 950-13-30</div>
                                     </div>
                                 </li>
-                                <li className='contact__item d-flex align-items-center'><i class="fas fa-envelope icon-color"></i><span className='contact__text'>kniginya.com@gmail.com</span></li>
+                                <li className='contact__item d-flex align-items-center'><i className="fas fa-envelope icon-color"></i><span className='contact__text'>kniginya.com@gmail.com</span></li>
                             </ul>
                         </div>
                         <div className="col-12 col-sm-6 col-md-8">
@@ -40,23 +40,23 @@ function Contacts() {
                         <div className="content-container mr-2">
                             <h4 className="h4">Написать нам</h4>
                             <form className="form">
-                                <div class="mb-3 form__name">
-                                    <label class="form-label">Ваше имя:</label>
-                                    <input type="text" class="form-control" placeholder="Введите Ваше имя" />
+                                <div className="mb-3 form__name">
+                                    <label className="form-label">Ваше имя:</label>
+                                    <input type="text" className="form-control" placeholder="Введите Ваше имя" />
                                 </div>
-                                <div class="mb-3 form__email">
-                                    <label for="exampleInputEmail1" class="form-label">Ваш email:</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введите Ваш email" />
+                                <div className="mb-3 form__email">
+                                    <label for="exampleInputEmail1" className="form-label">Ваш email:</label>
+                                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введите Ваш email" />
                                 </div>
-                                <div class="mb-3 form__comment">
-                                    <label class="form-label">Ваш вопрос:</label>
+                                <div className="mb-3 form__comment">
+                                    <label className="form-label">Ваш вопрос:</label>
                                     <textarea name="comment" id="" placeholder="Введите Ваш вопрос"></textarea>
                                 </div>
-                                <div class="mb-3 form-check">
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                                        <label class="form-check-label" for="exampleCheck1">Я даю согласие на обработку и использование моих персональных данных.</label>
+                                <div className="mb-3 form-check">
+                                    <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                                        <label className="form-check-label" for="exampleCheck1">Я даю согласие на обработку и использование моих персональных данных.</label>
                                 </div>
-                                <button type="submit" class="btn form__btn">Отправить</button>
+                                <button type="submit" className="btn form__btn">Отправить</button>
                             </form>
                         </div>
                     </div>

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
-
-function Breadcrumb({currentPage}) {
+function Breadcrumb({ currentPage }) {
     return (
         <nav className="mt-3" aria-label="breadcrumb">
             <ol className="breadcrumb">
@@ -11,5 +11,9 @@ function Breadcrumb({currentPage}) {
         </nav>
     )
 }
+
+Breadcrumb.propTypes = {
+    currentPage: PropTypes.string
+};
 
 export default Breadcrumb

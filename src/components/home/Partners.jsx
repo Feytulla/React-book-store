@@ -4,7 +4,6 @@ import "slick-carousel/slick/slick-theme.css";
 
 function Partners() {
 
-
     const settings = {
         className: "center",
         infinite: true,
@@ -83,7 +82,6 @@ function Partners() {
                         </div>
                     </Slider>
                 </div>
-
             </div>
         </>
     )

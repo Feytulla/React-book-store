@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useParams } from "react-router";
-import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux";
 import { addPageNumber } from '../../store/search';
@@ -61,7 +60,7 @@ function Pagination() {
             setTogglePrev(true)
         }
 
-        if (+param.pageNumber < 3 ) {
+        if (+param.pageNumber < 3) {
             setToggleFirstNum(false)
         } else if (+param.pageNumber > 2) {
             setToggleFirstNum(true)
@@ -102,14 +101,11 @@ function Pagination() {
         } else {
             setToggleNext(false)
         }
-
-
     }
 
     function firstPage() {
         navigate(`/search/${param.searchResult}/${1}`)
     }
-
 
     return (
         <>
@@ -156,7 +152,6 @@ function Pagination() {
                             <span onClick={() => nextBtn()} className='page-link'>Далее</span>
                         </li>
                     }
-
                 </ul>
             </nav>
         </>

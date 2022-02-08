@@ -10,7 +10,7 @@ function DoneOrder() {
                     <i className="fab fa-shopify done-order__icon"></i>
                     <h2 className="title mb-3 mt-3">Готово!</h2>
                     <p>Спасибо за заказ, мы свяжемся с Вами</p>
-                    <div className="done-order__link mb-4"><Link to='/' className="">Вернуться</Link></div>
+                    <div className="done-order__link mb-4"><Link to='/'>Вернуться</Link></div>
                 </div>
             </div>
         </>

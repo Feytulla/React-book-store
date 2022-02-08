@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import BookList from "./BookList";
 import { apiAddBook } from '../../store/bookCart';
@@ -7,7 +7,6 @@ function BookTable() {
     const dispatch = useDispatch();
     const books = useSelector((state) => state.cart.book);
 
-
     useEffect(() => {
         if (localStorage.getItem('book')) {
             const response = JSON.parse(localStorage.getItem('book'));
@@ -15,9 +14,8 @@ function BookTable() {
         }
     }, [])
 
-
     return (
-        <table class="table">
+        <table className="table">
             <thead>
                 <tr>
                     <th scope="col" className='tabele__title'>Картинка</th>

@@ -1,10 +1,7 @@
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import { useState, useEffect } from 'react';
 
 import Loading from '../Loading';
 import SearchItem from "./SearchItem";
-
 
 function SearchList() {
     const { status, error } = useSelector((state) => state.search);
